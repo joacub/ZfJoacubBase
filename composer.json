@@ -1,0 +1,26 @@
+{
+    "name": "atukai/at-base",
+    "description": "Extra ZF2 library.",
+    "type": "library",
+    "keywords": [
+        "zf2 library", "AtBase", "atukai", "at", "zf2"
+    ],
+    "homepage": "https://github.com/atukai/AtBase",
+    "authors": [
+        {
+            "name": "Alexander Tukai",
+            "email": "atukai@gmail.com"
+        }
+    ],
+    "require": {
+        "zendframework/zendframework": "2.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "AtBase": "src/"
+        },
+        "classmap": [
+            "./Module.php"
+        ]
+    }
+}
