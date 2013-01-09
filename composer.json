@@ -1,5 +1,5 @@
 {
-    "name": "atukai/at-base",
+    "name": "joacub/zf-joacub-base",
     "description": "Extra ZF2 library.",
     "type": "library",
     "keywords": [
@@ -8,8 +8,8 @@
     "homepage": "https://github.com/atukai/AtBase",
     "authors": [
         {
-            "name": "Alexander Tukai",
-            "email": "atukai@gmail.com"
+            "name": "Johan",
+            "email": "johan@gmail.com"
         }
     ],
     "require": {
@@ -17,7 +17,7 @@
     },
     "autoload": {
         "psr-0": {
-            "AtBase\\": "src/"
+            "ZfJoacubBase\\": "src/"
         },
         "classmap": [
             "./Module.php"
