@@ -106,9 +106,9 @@ class BackTo extends AbstractPlugin
         }
 
         if ($message) {
-            $this->getController()->flashMessenger()->addMessage($message);
+            $this->getController()->flashMessenger()->addSuccessMessage($message);
         }
 
-        $this->getController()->redirect()->toUrl($this->getBackUrl());
+        return $this->getController()->redirect()->toUrl($this->getBackUrl());
     }
 }

@@ -3,6 +3,8 @@
 namespace AtBase\View\Helper;
 
 use Zend\View\Helper\AbstractHelper;
+use Zend\EventManager\StaticEventManager;
+use Zend\Mvc\Router\Http\Query;
 
 class QueryParams extends AbstractHelper
 {
@@ -28,8 +30,15 @@ class QueryParams extends AbstractHelper
             }
         }
 
+        $url = $this->getView()->url(null, array(), array(), $reuseMatchedParams);
+        
+        if(strstr($url, '?')) {
+            $queryArray = array_merge($currentParams, $params);
+            return $this->getView()->url(null, $queryArray, array(), $reuseMatchedParams);;
+        }
+        
         $queryString = http_build_query(array_merge($currentParams, $params));
-
         return $this->getView()->url(null, array(), array(), $reuseMatchedParams) . '?' . $queryString;
+        
     }
 }
