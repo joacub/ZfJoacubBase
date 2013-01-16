@@ -13,7 +13,9 @@
         }
     ],
     "require": {
-        "zendframework/zendframework": "2.*"
+        "zendframework/zendframework": "2.*",
+        "slm/locale": "dev-master"
+        
     },
     "autoload": {
         "psr-0": {
