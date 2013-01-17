@@ -1,6 +1,6 @@
 <?php
 
-namespace AtBase\Mvc\Controller\Plugin;
+namespace JoacubBase\Mvc\Controller\Plugin;
 
 use Zend\Mvc\Controller\Plugin\AbstractPlugin;
 use Zend\Session\Container;
@@ -44,7 +44,7 @@ class BackTo extends AbstractPlugin
     public function getSessionContainer()
     {
         if (!$this->sessionContainer) {
-            $this->sessionContainer = new Container('at_base');
+            $this->sessionContainer = new Container('joacub_base');
         }
 
         return $this->sessionContainer;

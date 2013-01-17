@@ -1,6 +1,6 @@
 <?php
 
-namespace AtBase;
+namespace JoacubBase;
 
 class Module
 {
@@ -22,7 +22,8 @@ class Module
     {
         return array(
             'invokables' => array(
-                'atBaseQueryParams' => 'AtBase\View\Helper\QueryParams',
+                'joacubBaseQueryParams' => 'JoacubBase\View\Helper\QueryParams',
+                'joacubBaseLocale' => 'JoacubBase\View\Helper\Locale',
             ),
         );
     }

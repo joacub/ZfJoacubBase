@@ -1,6 +1,6 @@
 <?php
 
-namespace AtBase\View\Helper;
+namespace JoacubBase\View\Helper;
 
 use Zend\View\Helper\AbstractHelper;
 use Zend\EventManager\StaticEventManager;

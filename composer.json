@@ -3,9 +3,9 @@
     "description": "Extra ZF2 library.",
     "type": "library",
     "keywords": [
-        "zf2 library", "AtBase", "atukai", "at", "zf2"
+        "zf2 library", "JoacubBase", "atukai", "at", "zf2"
     ],
-    "homepage": "https://github.com/atukai/AtBase",
+    "homepage": "https://github.com/atukai/JoacubBase",
     "authors": [
         {
             "name": "Johan",
