@@ -12,11 +12,13 @@
             "email": "johan@gmail.com"
         }
     ],
+    "repositories": [
+            { "type": "vcs", "url": "git@bitbucket.org:joacub/joacubcountriesflags.git" },
+    ],
     "require": {
         "zendframework/zendframework": "2.*",
         "slm/locale": "dev-master",
-        "delboy1978uk/del-countries-flags":"dev-master"
-        
+        "joacub/JoacubCountriesFlags":"dev-master"
     },
     "autoload": {
         "psr-0": {
