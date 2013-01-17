@@ -2,6 +2,7 @@
 
 namespace JoacubBase;
 
+use JoacubBase\View\Helper\Locale;
 class Module
 {
     public function getAutoloaderConfig()
@@ -22,9 +23,16 @@ class Module
     {
         return array(
             'invokables' => array(
-                'joacubBaseQueryParams' => 'JoacubBase\View\Helper\QueryParams',
-                'joacubBaseLocale' => 'JoacubBase\View\Helper\Locale',
+                'joacubBaseQueryParams' => 'JoacubBase\View\Helper\QueryParams'
             ),
+            'factories' => array(
+                'joacubBaseLocale' => function ($sm) {
+                    $locator = $sm->getServiceLocator();
+                    $viewHelper = new Locale();
+                    $viewHelper->setLocaleDetector($locator->get('SlmLocale\Locale\Detector'));
+                    return $viewHelper;
+                },
+            )
         );
     }
 }

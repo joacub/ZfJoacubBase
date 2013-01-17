@@ -14,7 +14,8 @@
     ],
     "require": {
         "zendframework/zendframework": "2.*",
-        "slm/locale": "dev-master"
+        "slm/locale": "dev-master",
+        "delboy1978uk/del-countries-flags":"dev-master"
         
     },
     "autoload": {
