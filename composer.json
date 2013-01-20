@@ -12,9 +12,6 @@
             "email": "johan@gmail.com"
         }
     ],
-    "repositories": [
-            { "type": "vcs", "url": "git@bitbucket.org:joacub/dlutwbootstrap.git" }
-        ],
     "require": {
         "zendframework/zendframework": "2.*",
         "slm/locale": "dev-master",
