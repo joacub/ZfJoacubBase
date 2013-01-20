@@ -16,7 +16,7 @@
         "zendframework/zendframework": "2.*",
         "slm/locale": "dev-master",
         "joacub/joacub-countries-flags":"dev-master",
-        "silvester/reverse-form": "dev-master"
+        "dlu/dlutwbootstrap": "dev-master"
     },
     "autoload": {
         "psr-0": {
