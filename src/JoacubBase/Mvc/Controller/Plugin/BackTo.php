@@ -4,6 +4,7 @@ namespace JoacubBase\Mvc\Controller\Plugin;
 
 use Zend\Mvc\Controller\Plugin\AbstractPlugin;
 use Zend\Session\Container;
+use Nette\Diagnostics\Debugger;
 
 /**
  *
@@ -104,7 +105,7 @@ class BackTo extends AbstractPlugin
         if ($this->getController()->getRequest()->isXmlHttpRequest()) {
             return;
         }
-
+        
         if ($message) {
             $this->getController()->flashMessenger()->addSuccessMessage($message);
         }

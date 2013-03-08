@@ -5,6 +5,10 @@ namespace JoacubBase;
 use JoacubBase\View\Helper\Locale;
 class Module
 {
+	public function getConfig() {
+		return include __DIR__ . '/config/module.config.php';
+	}
+	
     public function getAutoloaderConfig()
     {
         return array(
@@ -18,12 +22,22 @@ class Module
             ),
         );
     }
+    
+    public function getControllerPluginConfig()
+    {
+    	return array(
+    		'invokables' => array(
+    			'backTo' => 'JoacubBase\Mvc\Controller\Plugin\BackTo'
+    		),
+    	);
+    }
 
     public function getViewHelperConfig()
     {
         return array(
             'invokables' => array(
-                'joacubBaseQueryParams' => 'JoacubBase\View\Helper\QueryParams'
+                'joacubBaseQueryParams' => 'JoacubBase\View\Helper\QueryParams',
+            	'joacubBaseHtmlCutter' => 'JoacubBase\View\Helper\HtmlCutter'
             ),
             'factories' => array(
                 'joacubBaseLocale' => function ($sm) {
