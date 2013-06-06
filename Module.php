@@ -3,8 +3,27 @@
 namespace JoacubBase;
 
 use JoacubBase\View\Helper\Locale;
+use Zend\Mvc\MvcEvent;
+use Nette\Diagnostics\Debugger;
 class Module
 {
+	
+	public function onBootstrap(MvcEvent $e)
+	{
+		$eventManager        = $e->getApplication()->getEventManager();
+		
+		$eventManager->attach(MvcEvent::EVENT_RENDER, array($this,'onRender'), 100);
+	
+	}
+	
+	public function onRender(MvcEvent $e)
+	{
+		if(PHP_SAPI != 'cli') {
+			$view = $e->getApplication()->getServiceManager()->get('viewrenderer');
+			$view->inlineScript()->appendScript('var site_url = "'.$view->basePath().'";');
+		}
+	}
+	
 	public function getConfig() {
 		return include __DIR__ . '/config/module.config.php';
 	}
