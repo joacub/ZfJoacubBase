@@ -9,6 +9,11 @@ return array(
 			)
 		),
 	),
+	'joacub-base' => array(
+		'doctrine' => array(
+			'table_prefix' => null
+		)
+	)
 );
 
 

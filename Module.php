@@ -5,7 +5,9 @@ namespace JoacubBase;
 use JoacubBase\View\Helper\Locale;
 use Zend\Mvc\MvcEvent;
 use Nette\Diagnostics\Debugger;
-class Module
+use Zend\ModuleManager\Feature\ServiceProviderInterface;
+use JoacubBase\Doctrine\Extensions\TablePrefix;
+class Module implements ServiceProviderInterface
 {
 	
 	public function onBootstrap(MvcEvent $e)
@@ -67,5 +69,24 @@ class Module
                 },
             )
         );
+    }
+    
+    public function getServiceConfig()
+    {
+    	return array(
+    		
+    		'factories' => array(
+    			'JoacubBase\Doctrine\Extensions\TablePrefix' => function($sm) {
+    				$config = $sm->get('config');
+    				if(!isset($config['joacub-base']['doctrine']['table_prefix'])) {
+    					$config['joacub-base']['doctrine']['table_prefix'] = null;
+    				} else {
+    					$config['joacub-base']['doctrine']['table_prefix'] .= '_';
+    				}
+    				return new TablePrefix($config['joacub-base']['doctrine']['table_prefix']);
+    			}
+    		)
+    		
+    	);
     }
 }
