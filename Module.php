@@ -7,6 +7,8 @@ use Zend\Mvc\MvcEvent;
 use Nette\Diagnostics\Debugger;
 use Zend\ModuleManager\Feature\ServiceProviderInterface;
 use JoacubBase\Doctrine\Extensions\TablePrefix;
+use Zend\ServiceManager\ServiceLocatorInterface;
+use JoacubBase\View\Helper\Params;
 class Module implements ServiceProviderInterface
 {
 	
@@ -61,6 +63,12 @@ class Module implements ServiceProviderInterface
             	'joacubBaseHtmlCutter' => 'JoacubBase\View\Helper\HtmlCutter'
             ),
             'factories' => array(
+            	'params' => function (ServiceLocatorInterface $helpers)
+            	{
+            		$services = $helpers->getServiceLocator();
+            		$app = $services->get('Application');
+            		return new Params($app->getRequest(), $app->getMvcEvent());
+            	},
                 'joacubBaseLocale' => function ($sm) {
                     $locator = $sm->getServiceLocator();
                     $viewHelper = new Locale();
