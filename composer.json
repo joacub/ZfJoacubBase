@@ -19,7 +19,7 @@
         "zendframework/zendframework": "2.*",
         "slm/locale": "dev-master",
         "joacub/joacub-countries-flags":"dev-master",
-        "joacub/dlutwbootstrap": "dev-master"
+        "joacub/dlutwbootstrap": "*"
     },
     "autoload": {
         "psr-0": {
