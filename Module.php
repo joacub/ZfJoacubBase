@@ -24,7 +24,7 @@ class Module implements ServiceProviderInterface
 	{
 		if(PHP_SAPI != 'cli') {
 			$view = $e->getApplication()->getServiceManager()->get('viewrenderer');
-			$view->inlineScript()->appendScript('var site_url = "'.$view->basePath().'";');
+			$view->inlineScript()->appendScript('var site_url = "'.substr($view->url('home'), 0, -1).'";');
 		}
 	}
 	
