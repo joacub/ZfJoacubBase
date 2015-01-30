@@ -59,16 +59,6 @@ class SessionManager extends AbstractManager
     public function sessionExists()
     {
 
-        if(isset($_GET['debug'])) {
-            var_dump(version_compare(PHP_VERSION, '5.4.0', '>='));
-            var_dump(session_status());
-            if (session_status() != PHP_SESSION_NONE) {
-                var_dump('existe');
-            } else {
-                session_start();
-            }
-            exit;
-        }
         $sid = defined('SID') ? constant('SID') : false;
         if ($sid !== false && $this->getId()) {
             return true;
