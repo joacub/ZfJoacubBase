@@ -60,8 +60,10 @@ class SessionManager extends AbstractManager
     {
 
         if(isset($_GET['debug'])) {
-            var_dump(PHP_VERSION);
-
+            var_dump(version_compare(PHP_VERSION, '5.4.0', '>='));
+            if (session_status() != PHP_SESSION_NONE) {
+                var_dump('existe');
+            }
             exit;
         }
         $sid = defined('SID') ? constant('SID') : false;
