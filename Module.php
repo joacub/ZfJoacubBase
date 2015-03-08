@@ -16,7 +16,7 @@ class Module implements ServiceProviderInterface
 	{
 		$eventManager        = $e->getApplication()->getEventManager();
 		
-		$eventManager->attach(MvcEvent::EVENT_RENDER, array($this,'onRender'), 100);
+//		$eventManager->attach(MvcEvent::EVENT_RENDER, array($this,'onRender'), 100);
 	
 	}
 	
