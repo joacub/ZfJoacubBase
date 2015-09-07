@@ -40,6 +40,9 @@ class Params extends AbstractHelper
 
     public function fromRoute($param = null, $default = null)
     {
+        if(!$this->event->getRouteMatch())
+            throw new \Exception('No existe el router');
+
         if ($param === null)
         {
             return $this->event->getRouteMatch()->getParams();
