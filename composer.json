@@ -16,10 +16,8 @@
             { "type": "vcs", "url": "git@bitbucket.org:joacub/dlutwbootstrap.git" }
         ],
     "require": {
-        "zendframework/zendframework": "2.*",
-        "joacub/locale": "dev-master",
-        "joacub/joacub-countries-flags":"dev-master",
-        "joacub/dlutwbootstrap": "*"
+        "zendframework/zend-mvc": "^3.0.1",
+        "joacub/locale": "dev-master"
     },
     "autoload": {
         "psr-0": {
