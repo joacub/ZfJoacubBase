@@ -62,7 +62,7 @@ class Module implements ServiceProviderInterface
             'factories' => array(
             	'params' => function (ServiceLocatorInterface $helpers)
             	{
-            		$services = $helpers->getServiceLocator();
+            		$services = $helpers;
             		$app = $services->get('Application');
             		return new Params($app->getRequest(), $app->getMvcEvent());
             	},
