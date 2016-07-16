@@ -12,13 +12,13 @@ use JoacubBase\View\Helper\Params;
 class Module implements ServiceProviderInterface
 {
 	
-	public function onBootstrap(MvcEvent $e)
-	{
-		$eventManager        = $e->getApplication()->getEventManager();
-		
-//		$eventManager->attach(MvcEvent::EVENT_RENDER, array($this,'onRender'), 100);
-	
-	}
+//	public function onBootstrap(MvcEvent $e)
+//	{
+//		$eventManager        = $e->getApplication()->getEventManager();
+//
+////		$eventManager->attach(MvcEvent::EVENT_RENDER, array($this,'onRender'), 100);
+//
+//	}
 	
 	public function onRender(MvcEvent $e)
 	{
